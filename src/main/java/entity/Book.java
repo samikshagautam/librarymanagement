@@ -2,16 +2,14 @@ package entity;
 
 import org.bson.types.ObjectId;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ObjectId id;
+
     private String title;
     private String author;
     private String isbn;
@@ -19,8 +17,13 @@ public class Book {
     private double price;
     private boolean status;
 
+    @JoinColumn(insertable = false, updatable = true)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Borrow borrow;
+
     public Book() {
         this.status = true;
+        borrow = new Borrow();
     }
 
     public ObjectId getId() {
@@ -77,5 +80,17 @@ public class Book {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public Borrow getBorrow() {
+        return borrow;
+    }
+
+    public void setBorrow(Borrow borrow) {
+        this.borrow = borrow;
     }
 }

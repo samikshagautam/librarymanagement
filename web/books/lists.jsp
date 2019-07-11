@@ -36,6 +36,7 @@
             <td>${book.getPrice()}</td>
             <td>${book.getStatus()}</td>
             <td>
+                <a href="books/borrowing?id=${book.getId()}">Borrow</a>
                 <a href="books/edit?id=${book.getId()}">Edit </a>
                 <a class="delete-book" href="books/delete?id=${ book.getId()}">Delete</a>
             </td>
