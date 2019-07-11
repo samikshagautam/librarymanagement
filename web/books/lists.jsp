@@ -37,7 +37,7 @@
             <td>${book.getStatus()}</td>
             <td>
                 <a href="books/edit?id=${book.getId()}">Edit </a>
-                <a href="books/delete?id=${ book.getId()}">Delete</a>
+                <a class="delete-book" href="books/delete?id=${ book.getId()}">Delete</a>
             </td>
         </tr>
 
@@ -53,6 +53,18 @@
 
 
 </table>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.delete-book').click(function (e) {
+            var ans = confirm("Are you sure you want to delete this book?");
+            if (ans === false) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
