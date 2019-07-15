@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Library Management System</title>
   </head>
   <body>
-  $END$
+  <h1>Welcome to Library Management System</h1>
   </body>
 </html>

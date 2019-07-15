@@ -4,11 +4,13 @@
 
 <html>
 <head>
-    <title>Add a Book</title>
+    <title>Edit a Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyRb0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<h2>Edit Book Info:</h2>
 <form method="post">
-    <div class="row">
+    <div class="form-group">
         <div class="left">
             <label for="title">Title</label>
         </div>
@@ -17,7 +19,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="form-group">
         <div class="left">
             <label for="author">Author</label>
         </div>
@@ -26,7 +28,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="form-group">
         <div class="left">
             <label for="isbn">ISBN</label>
         </div>
@@ -35,7 +37,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="form-group">
         <div class="left">
             <label for="edition">Edition</label>
         </div>
@@ -44,7 +46,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="form-group">
         <div class="left">
             <label for="price">Price</label>
         </div>
@@ -53,9 +55,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="form-group">
         <div class="left">
-            <button type="submit" id="add-book-button">Submit</button>
+            <button type="submit" id="add-book-button" class="btn btn-primary">Submit</button>
         </div>
     </div>
 

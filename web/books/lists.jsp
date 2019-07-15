@@ -8,19 +8,23 @@
 <html>
 <head>
     <title>Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="list.css">
 </head>
 <body>
-<table>
+
+<h2>List of Books</h2>
+<table class="table table-bordered">
     <thead>
     <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Edition</th>
-        <th>Price</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Edition</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col" >Action</th>
     </tr>
     </thead>
     <tbody>
@@ -28,7 +32,7 @@
 
         <%--<a href="${requestScope.getContextPath}feed?tag=${tag.getTag()}">${tag.getTag()}</a>--%>
         <tr>
-            <td>${book.getId()}</td>
+            <td scope="row">${book.getId()}</td>
             <td>${book.getTitle()}</td>
             <td>${book.getAuthor()}</td>
             <td>${book.getIsbn()}</td>
