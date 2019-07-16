@@ -3,6 +3,7 @@ package entity;
 import org.bson.types.ObjectId;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity(name = "books")
 public class Book {
@@ -17,13 +18,55 @@ public class Book {
     private double price;
     private boolean status;
 
-    @JoinColumn(insertable = false, updatable = true)
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Borrow borrow;
+    private LocalDate borrowDate;
+
+    public LocalDate getBorrowDate() {
+        return borrowDate;
+    }
+
+    public void setBorrowDate(LocalDate borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+
+    public void setStudentEmail(String studentEmail) {
+        this.studentEmail = studentEmail;
+    }
+
+    public String getStudentPhone() {
+        return studentPhone;
+    }
+
+    public void setStudentPhone(String studentPhone) {
+        this.studentPhone = studentPhone;
+    }
+
+    private LocalDate returnDate;
+    private String studentName;
+    private String studentEmail;
+    private String studentPhone;
 
     public Book() {
         this.status = true;
-        borrow = new Borrow();
     }
 
     public ObjectId getId() {
@@ -84,13 +127,5 @@ public class Book {
 
     public boolean isStatus() {
         return status;
-    }
-
-    public Borrow getBorrow() {
-        return borrow;
-    }
-
-    public void setBorrow(Borrow borrow) {
-        this.borrow = borrow;
     }
 }

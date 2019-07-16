@@ -10,25 +10,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/books/borrow")
-public class BorrowBook extends HttpServlet {
+@WebServlet("/books/return")
+public class ReturnBook extends HttpServlet {
     BookService service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         try {
             String id = req.getParameter("id");
             Book book = service.getBookById(id);
-            if(book == null){
-                throw  new Exception("Book not found!");
+            if (book == null) {
+                throw new Exception("Book not found!");
             }
-            service.borrowBook(book);
+            service.returnBook(book);
             resp.getWriter().print("success");
         } catch (Exception e) {
             resp.getWriter().print(e.getMessage());
         }
+
     }
+
 
     @Override
     public void init() throws ServletException {
