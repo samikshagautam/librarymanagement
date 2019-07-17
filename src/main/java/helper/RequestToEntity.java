@@ -1,6 +1,7 @@
 package helper;
 
 import entity.Book;
+import entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,5 +22,15 @@ public class RequestToEntity {
         book.setPrice(price);
 
         return book;
+    }
+
+    public static User toUser(HttpServletRequest req){
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(password);
+        return user;
     }
 }

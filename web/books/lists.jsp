@@ -9,7 +9,7 @@
 <head>
     <title>Books</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="list.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
         <th scope="col">Edition</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
-        <th scope="col" >Action</th>
+        <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -52,11 +52,14 @@
 
     <tfoot>
     <tr>
-        <th><a href="books/add">Add a book </a></th>
+        <th>
+            <a href="logout">Logout</a>
+        </th>
+        <th colspan=7" style="text-align: right;">
+            <a href="books/add">Add a book </a>
+        </th>
     </tr>
     </tfoot>
-
-
 </table>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">

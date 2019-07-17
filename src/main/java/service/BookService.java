@@ -18,16 +18,16 @@ public class BookService {
             throw new Exception("Title is empty!");
         }
         if (book.getAuthor() == null) {
-            throw new Exception("Title is empty!");
+            throw new Exception("Author is empty!");
         }
         if (book.getEdition() == null) {
-            throw new Exception("Title is empty!");
+            throw new Exception("Edition is empty!");
         }
         if (book.getIsbn() == null) {
-            throw new Exception("Title is empty!");
+            throw new Exception("Isbn is empty!");
         }
         if (book.getPrice() == 0) {
-            throw new Exception("Title is empty!");
+            throw new Exception("Price is empty!");
         }
 
         return model.save(book);

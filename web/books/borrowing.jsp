@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="list.css">
 </head>
 <body>
-<c:if test="${book.status==true}">
+<c:if test="${book.getStatus()==true}">
     <h2>Book is available for borrowing.</h2>
     <button type="button" class="borrow-book" data-book="${book.getId()}">Borrow Book</button>
 </c:if>
 
-<c:if test="${book.status==false}">
+<c:if test="${book.getStatus()==false}">
 
     Book is not available at this moment. Please come later. Thank you!
     <table>
@@ -94,7 +94,7 @@
                 success: function (resp) {
                     if (resp === "success") {
                         alert("Book was successfully returned!");
-                        location.reload();
+                        location.reload(); //to reload the page
                         return true;
                     }
                     alert(resp);
