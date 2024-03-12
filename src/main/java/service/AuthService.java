@@ -7,11 +7,11 @@ import javax.servlet.http.HttpSession;
 public class AuthService {
 
     public User loginUser(User user, HttpSession session) throws Exception {
-        if (user.getEmail().equals("jon@doe.com") == false) {
+        if ("jon@doe.com".equals(user.getEmail()) == false) {
             throw new Exception("Email does not exist!");
 
         }
-        if (user.getPassword().equals("1234ss") == false) {
+        if ("1234ss".equals(user.getPassword()) == false) {
             throw new Exception("Password didn't match");
         }
 

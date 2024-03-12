@@ -26,7 +26,7 @@ public class AuthFilter implements Filter {
         //allow user access login page without
         //logging in
 
-        if (path.equals("/login") || path.endsWith(".css")) {
+        if ("/login".equals(path) || path.endsWith(".css")) {
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
@@ -44,7 +44,7 @@ public class AuthFilter implements Filter {
         User user = (User) session.getAttribute("user");
         try {
 
-            if (!user.getEmail().equals("jon@doe.com")) {
+            if (!"jon@doe.com".equals(user.getEmail())) {
                 throw new Exception("User does not exist.");
             }
             filterChain.doFilter(req, resp);
